@@ -37,7 +37,8 @@ class Home extends Component {
         return(
       <ScrollView>
       <RenderItem
-      item={this.state.contents[0]}/>
+      item={this.state.contents[0]}
+      onPress={()=> navigation.navigate.GameTitles()}/>
       <RenderItem
       item={this.state.contents[1]}/>
       <RenderItem

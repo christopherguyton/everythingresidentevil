@@ -4,16 +4,16 @@ import {Card} from 'react-native-elements';
 import {GAMES} from '../shared/games';
 
 
-function RenderGames({game}) {
-    if (game) {
+function RenderGames({item}) {
+    if (item) {
         return(
             <View>
             <Card
-            featuredTitle={games.name}
+            featuredTitle={item.name}
             image={require('../assets/images/OriginalRE1.png')}
             >
             <Text style={{margin: 10}}>
-            {games.description}
+            {item.description}
             </Text>
             </Card>
             </View>
@@ -32,13 +32,13 @@ class GameTitles extends Component {
         };
     }
     static navigationOptions = {
-        title: 'Content Information'
+        title: 'Main Line Series'
     };
 
     render() {
-        const gameId = this.props.navigation.getParam('gameId');
-        const game = this.state.games.filter(game => game.id === gameId)[0];
-        return <RenderGames game={games}/>;
+        return( 
+            <RenderGames item={this.state.games[0]}/>
+            );
     }
 }
 
